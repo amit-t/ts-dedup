@@ -193,13 +193,7 @@ export class RedisCache implements Cache {
 
 /**
  * Create a new Redis cache instance
- * @param options Redis client options or connection string
- * @param cacheOptions Cache options
- * @returns A new RedisCache instance
- */
-/**
- * Create a new Redis cache instance
- * @param options Redis connection options (URL string or RedisOptions)
+ * @param options Redis connection string or RedisOptions
  * @param cacheOptions Additional cache options
  * @returns A new RedisCache instance
  */

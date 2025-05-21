@@ -6,15 +6,15 @@ type AnyObject = Record<string, unknown>;
 /**
  * Normalize an object by sorting its keys for consistent hashing
  * @param obj The object to normalize
- * @returns A normalized object with sorted keys
+ * @returns A normalized object with sorted keys or array of normalized objects
  */
-function normalizeObject(obj: AnyObject): AnyObject {
+function normalizeObject(obj: any): any {
   if (obj === null || typeof obj !== 'object') {
     return obj;
   }
 
   if (Array.isArray(obj)) {
-    return obj.map(normalizeObject);
+    return obj.map(item => normalizeObject(item));
   }
 
   const result: AnyObject = {};
