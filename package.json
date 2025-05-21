@@ -1,0 +1,63 @@
+{
+  "name": "ts-dedup",
+  "version": "0.1.0",
+  "description": "A lightweight, pluggable TypeScript library for time-bound deduplication of messages from streams/queues",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "test": "vitest",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"**/*.{ts,json,md}\"",
+    "prepare": "husky install",
+    "release": "semantic-release"
+  },
+  "keywords": [
+    "typescript",
+    "deduplication",
+    "cache",
+    "redis",
+    "distributed-systems"
+  ],
+  "author": "Amit Tiwari",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^20.17.50",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.0",
+    "prettier": "^3.0.0",
+    "semantic-release": "^21.0.0",
+    "ts-node": "^10.9.1",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^0.34.0"
+  },
+  "dependencies": {
+    "ioredis": "^5.3.0",
+    "protobufjs": "^7.2.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "lint-staged": {
+    "*.{js,ts,json,md}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  }
+}
