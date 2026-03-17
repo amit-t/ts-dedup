@@ -14,7 +14,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json',
+    project: ['./tsconfig.json', './tsconfig.test.json'],
+    createDefaultProgram: true,
   },
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
@@ -23,4 +24,13 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     'prettier/prettier': 'error',
   },
+  ignorePatterns: ['*.json'],
+  overrides: [
+    {
+      files: ['*.js'],
+      parserOptions: {
+        project: null,
+      },
+    },
+  ],
 };
