@@ -1,5 +1,6 @@
 module.exports = {
   root: true,
+  ignorePatterns: ['*.json'],
   env: {
     node: true,
     es2020: true,
@@ -24,7 +25,6 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'warn',
     'prettier/prettier': 'error',
   },
-  ignorePatterns: ['*.json'],
   overrides: [
     {
       files: ['*.js'],
